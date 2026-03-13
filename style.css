@@ -1,0 +1,42 @@
+body {
+
+font-family: Arial;
+background:white;
+color:black;
+margin:40px;
+
+}
+
+h1 {
+
+text-align:center;
+
+}
+
+.box {
+
+border:1px solid #ccc;
+padding:20px;
+margin-bottom:20px;
+
+}
+
+label {
+
+display:block;
+margin-top:10px;
+
+}
+
+input, select {
+
+width:100%;
+padding:8px;
+
+}
+
+button {
+
+margin-top:15px;
+padding:10px;
+  }
