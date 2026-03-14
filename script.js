@@ -1,37 +1,33 @@
 function calculate(){
 
-price = Number(document.getElementById("price").value);
-qty = Number(document.getElementById("qty").value);
-freight = Number(document.getElementById("freight").value);
-insurance = Number(document.getElementById("insurance").value);
-tax = Number(document.getElementById("tax").value);
+let price = Number(document.getElementById("price").value);
+let qty = Number(document.getElementById("qty").value);
+let freight = Number(document.getElementById("freight").value);
+let insurance = Number(document.getElementById("insurance").value);
+let tax = Number(document.getElementById("tax").value);
 
-fuel = Number(document.getElementById("fuel").value);
-delay = Number(document.getElementById("delay").value);
-season = Number(document.getElementById("season").value);
+let fuel = Number(document.getElementById("fuel").value);
+let delay = Number(document.getElementById("delay").value);
+let season = Number(document.getElementById("season").value);
 
-sell = Number(document.getElementById("sell").value);
-sales = Number(document.getElementById("sales").value);
+let sell = Number(document.getElementById("sell").value);
+let sales = Number(document.getElementById("sales").value);
 
-baseCost = price * qty;
+let baseCost = price * qty;
 
-taxCost = baseCost * tax / 100;
+let taxCost = baseCost * tax / 100;
 
-landingCost = baseCost + freight + insurance + taxCost + fuel + delay;
+let landingCost = baseCost + freight + insurance + taxCost;
 
-seasonRisk = landingCost * season / 100;
+let risk = riskAdjustment(landingCost,fuel,delay,season);
 
-landingCost = landingCost + seasonRisk;
+landingCost = landingCost + risk;
 
-soldUnits = qty * sales / 100;
+let profit = profitSimulation(qty,sell,sales,landingCost);
 
-revenue = soldUnits * sell;
+let pop = (profit/landingCost)*100;
 
-profit = revenue - landingCost;
-
-pop = (profit / landingCost) * 100;
-
-tds = (pop + sales) / 2;
+let tds = (pop + sales)/2;
 
 document.getElementById("landing").innerHTML =
 "Landing Cost: $" + landingCost.toFixed(2);
