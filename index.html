@@ -1,98 +1,135 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>RTIS - Risk Trade Intelligence System</title>
 
 <link rel="stylesheet" href="style.css">
 
 <script src="hs_database.js"></script>
+<script src="region_tax.js"></script>
 <script src="shipping.js"></script>
+<script src="risk_engine.js"></script>
+<script src="profit_engine.js"></script>
 <script src="planner.js"></script>
 <script src="script.js"></script>
 
 </head>
 
+
 <body>
 
 <h1>RTIS – Risk Trade Intelligence System</h1>
+
 
 <div class="box">
 
 <h2>Product Information</h2>
 
 <label>Product Category</label>
+
 <select id="product">
+
 <option value="tshirt">Garment - T Shirt</option>
+
 <option value="cosmetics">Cosmetics</option>
+
 <option value="household">Household Goods</option>
+
 </select>
 
 <label>HS Code</label>
-<input type="text" id="hs">
+
+<input type="text" id="hs" placeholder="Enter HS Code">
 
 </div>
+
+
 
 <div class="box">
 
 <h2>Cost Inputs</h2>
 
 <label>Factory Price ($)</label>
+
 <input type="number" id="price">
 
 <label>Quantity</label>
+
 <input type="number" id="qty">
 
 <label>Freight Cost ($)</label>
+
 <input type="number" id="freight">
 
 <label>Insurance ($)</label>
+
 <input type="number" id="insurance">
 
 <label>Import Tax (%)</label>
+
 <input type="number" id="tax">
 
 </div>
+
+
 
 <div class="box">
 
 <h2>Risk Adjustment</h2>
 
-<label>Fuel Price Increase ($)</label>
+<label>Fuel Price Increase (%)</label>
+
 <input type="number" id="fuel">
 
 <label>Transport Delay Cost ($)</label>
+
 <input type="number" id="delay">
 
 <label>Seasonal Risk (%)</label>
+
 <input type="number" id="season">
 
 </div>
+
+
 
 <div class="box">
 
 <h2>Market Simulation</h2>
 
 <label>Selling Price ($)</label>
+
 <input type="number" id="sell">
 
 <label>Expected Sales (%)</label>
+
 <input type="number" id="sales">
 
 <button onclick="calculate()">Calculate</button>
 
 </div>
 
+
+
 <div class="box">
 
 <h2>Results</h2>
 
-<p id="landing"></p>
-<p id="profit"></p>
-<p id="pop"></p>
-<p id="tds"></p>
+<p id="landing">Landing Cost:</p>
+
+<p id="profit">Profit:</p>
+
+<p id="pop">POP Score:</p>
+
+<p id="tds">TDS Score:</p>
 
 </div>
 
+
 </body>
-</html>
+
+  </html>
